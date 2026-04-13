@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Custom styles */
+.seat-grid {
+  display: grid;
+  gap: 8px;
+  padding: 20px;
+  background: #f5f5f5;
+  border-radius: 8px;
+}
+
+.seat {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #d9d9d9;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* Regular seats - Blue */
+.seat.regular.available {
+  background: white;
+  border-color: #1890ff;
+}
+
+.seat.regular.available:hover {
+  background: #e6f7ff;
+  border-color: #1890ff;
+  transform: scale(1.1);
+}
+
+/* Premium seats - Purple */
+.seat.premium.available {
+  background: #f9f0ff;
+  border-color: #722ed1;
+}
+
+.seat.premium.available:hover {
+  background: #efdbff;
+  border-color: #722ed1;
+  transform: scale(1.1);
+}
+
+/* VIP seats - Gold */
+.seat.vip.available {
+  background: #fffbe6;
+  border-color: #faad14;
+}
+
+.seat.vip.available:hover {
+  background: #fff1b8;
+  border-color: #faad14;
+  transform: scale(1.1);
+}
+
+/* Default available (fallback) */
+.seat.available {
+  background: white;
+  border-color: #1890ff;
+}
+
+.seat.available:hover {
+  background: #e6f7ff;
+  border-color: #1890ff;
+  transform: scale(1.1);
+}
+
+/* Selected state - all types turn green */
+.seat.selected {
+  background: #52c41a;
+  border-color: #52c41a;
+  color: white;
+}
+
+.seat.regular.selected {
+  background: #52c41a;
+  border-color: #389e0d;
+  color: white;
+}
+
+.seat.premium.selected {
+  background: #9254de;
+  border-color: #722ed1;
+  color: white;
+}
+
+.seat.vip.selected {
+  background: #faad14;
+  border-color: #d48806;
+  color: white;
+}
+
+.seat.booked {
+  background: #ff4d4f;
+  border-color: #ff4d4f;
+  color: white;
+  cursor: not-allowed;
+}
+
+.seat.locked {
+  background: #faad14;
+  border-color: #faad14;
+  color: white;
+  cursor: not-allowed;
+}
+
+.screen-indicator {
+  background: linear-gradient(to bottom, #1890ff, #096dd9);
+  color: white;
+  padding: 10px;
+  text-align: center;
+  border-radius: 8px;
+  margin: 20px 0;
+  font-weight: 600;
+}
+
+.movie-card {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.movie-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
